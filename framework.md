@@ -17,9 +17,15 @@
 
 ## General Introduction 
 
-When humans approach problem solving it can be generalised with the following procedure 1. 
+When humans conduct problem solving it can be dissected into a generalised approach:
+1. Goal Identification: Identifying the objective or desired outcome.
+2. Research & Information Gathering: Collecting relevant data and information.
+3. Planning & Strategising: Creating a detailed plan of action.
+4. Execution: Implementing the plan.
+5. Monitoring & Adjustment: Evaluating progress, making necessary adjustments.
+6. Reflection and Learning: Reviewing outcomes and gaining insights for future improvements.
 
-This framework aims to replicate human cognition through an artificial cognitive architecture designed to create AI-Employees that closely resemble human employees. Unlike other proposed architectures, this is intended to be a real-world implementation rather than a conceptual, theoretical framework.
+This framework aims to replicate the human approach to problem-solving through an artificial cognitive architecture designed to create AI employees that closely resemble human employees. Unlike other proposed architectures, this is intended to be a real-world implementation rather than a conceptual, theoretical framework.
 
 The goal of this framework is to serve as the underlying structure for SoftGen.ai's Autonomous AI Developer and to lay the groundwork for creating other autonomous AIs. By creating a cognitive architecture that mimics a human software developer, we are paving the way for a general framework for autonomous cognitive entities capable of interacting with the world and solving objectives based on their environment and abilities.
 
