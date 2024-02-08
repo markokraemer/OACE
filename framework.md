@@ -1,4 +1,4 @@
-# Objective-based Autonomous Cognitive Entity (OACE) Framework
+# Objective-based Autonomous Cognitive Entity (OACE) Framework & the Autonomous AI Developer
 
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
@@ -8,7 +8,7 @@
 - [Memory](#memory)
 - [Layer Processing General](#layer-processing-general)
 - [Layer Communication](#layer-communication)
-- [Comprehension Layer](#global-strategy-layer)
+- [Comprehension Layer](#comprehension-layer)
 - [Executive Function Layer](#executive-function-layer)
 - [Cognitive Control](#cognitive-control)
 - [Task Prosecution(s) Layer](#task-prosecutions-layer)
@@ -17,6 +17,18 @@
 
 ## General Introduction 
 
+General Problem with building really capable AI Agents right now:
+- GPT-4 is superior to humans https://lifearchitect.ai/iq-testing-ai/. Let GPT-4 operate in the right context and with the given executive abilities and it will be more capable than you, executing your tasks at higher precision. What GPT-4 is missing is an cognitive architecture to make use of its 'intelligence'. 
+- Contextualisation is a big problem. An Agent-self´s model, its current objective context, its world context, its project context, its broader context of interaction. The agent has to understand everything from small to big at every step when its needed.
+- The agents has to have the abilities to actually interact and implements its work. Iterate on it, now that it created past versions of work.
+
+The core challenges associated with building the Autonomous AI Developer:
+- Working with various, vastly different codebases at scale. Being able to comprehend any codebase, any size, any tech stack and find the right, relevant contents to edit at a time. Being able to work in everything from js, ts, python, rust, c++ to cobol and assembly. An agnostic system that can contextualise any codebase. Understand it like a developer, navigate it like a developer.
+- Having an actual environment and abilities to write the code, run the code & deployment, navigate the code, navigate logs basically the IDE & Deployment // Dev environment & make sense of them contextually.
+- Generating valid code. Actual challenge to generate valid working code is iteration. That said the challenge is creating test methods that can validate if the works correctly, rather than just generating the code. What are the right testing methods to ensure we generate valid code?
+- Assembling context in a way that the AI understands what it is, where it is, what it should do next, how it should do it, what it already did. What, Where, Who, Why. -> Creating the bigger picture to create a comprehensive understanding at every step in the process. // -> The Agent´s Self that can comprehend and execute, that can think autonomously to solve an objective. 
+
+
 When humans conduct problem solving it can be dissected into a generalised approach:
 1. Goal Identification: Identifying the objective or desired outcome.
 2. Research & Information Gathering: Collecting relevant data and information.
@@ -24,6 +36,7 @@ When humans conduct problem solving it can be dissected into a generalised appro
 4. Execution: Implementing the plan.
 5. Monitoring & Adjustment: Evaluating progress, making necessary adjustments.
 6. Reflection and Learning: Reviewing outcomes and gaining insights for future improvements.
+Although its sequentially represented here, humans are capabale of jumping between the layers.
 
 This framework aims to replicate the human approach to problem-solving through an artificial cognitive architecture designed to create AI employees that closely resemble human employees. Unlike other proposed architectures, this is intended to be a real-world implementation rather than a conceptual, theoretical framework.
 
@@ -33,10 +46,10 @@ The framework encompasses the environment in which the OACE operates, its practi
 
 A sample flow:
 
-0. The objective is discussed and defined outside of the OACE by the user.
+0. The objective is discussed and defined outside of the OACE by the user. 
 1. Comprehension Layer receives the objective from the user.
 2. Comprehension Layer gains a deeper understanding of the objective, identifies relevant files/snippets, and devises strategies to achieve the objective. This involves thorough investigation and strategizing on how to approach the matter, making sense of the world using the Environmental Context.
-3. Executive Function creates detailed implementation task plans to execute the strategies in order to reach the objective. This involves creating detailed tasks.
+3. Executive Function creates detailed implementation task plans to reach the objective. This involves creating detailed tasks.
 4. Cognitive Control selects which task to work on from the plan.
 5. Task Prosecution works on the task.
 6. Cognitive Control evaluates task success/failure and decides what to do next. It may send the task back to prosecution or back to the Executive Function to replan.
@@ -61,7 +74,7 @@ Sample Structure:
     "name": "SoftGen.ai Web Interface",
     "description": "Next.js 13 Frontend Codebase for a Full Stack Web App Builder."
   },
-  "File_types": {
+  "file_types": {
     "FrontendPages": "Next.js pages directory for routing and view rendering.",
     "FrontendComponents": "Reusable React components for UI construction.",
     "FrontendHooks": "Custom React hooks for shared logic across components.",
@@ -199,7 +212,6 @@ Sample Structure:
           "Instructions": " ... ",
           "FileDependencies": ["<file1.js>", "<file2.jsx>", "..."]
         },
-        "relatedObjective": "objective1",
         "contextRefs": ["ref1", "ref2", "..."]
       },
       {
@@ -209,7 +221,6 @@ Sample Structure:
           "CommandString": "npm install package-name",
           "ExecutionPath": "/path/to/project/directory"
         },
-        "relatedObjective": "objective1",
         "contextRefs": ["ref3", "ref4", "..."]
       }
     ],
@@ -230,7 +241,7 @@ Sample Structure:
 - CoT / ToT / Observe+Think+Act in each Layer.
 - Each layer operates recursively or or up to a specified number of steps to generate a final output. It uses its abilities and internal dialogue to facilitate thinking. It operates within specified boundaries set by system-level instructions on the procedural general process to execute in each layer.
 
-## Layer Communication
+e## Layer Communication
 - Bidirectional communication between each layer
 - Utilizes a Top-to-bottom bus and Bottom-to-top communication bus.
 - Upon creation of an output, the output and the layer-thread summary are shared in both directions. A latest Working Memory is also generated with the latest information.
