@@ -1,4 +1,4 @@
-# Objective-based Autonomous Cognitive Entity (OACE) Framework & the Autonomous AI Developer
+# Objective-based Autonomous Cognitive Entity (OACE) Framework & the Autonomous AI Developer 
 
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
@@ -16,18 +16,16 @@
 
 
 ## General Introduction 
-
 General Problem with building really capable AI Agents right now:
-- GPT-4 is superior to humans https://lifearchitect.ai/iq-testing-ai/. Let GPT-4 operate in the right context and with the given executive abilities and it will be more capable than you, executing your tasks at higher precision. What GPT-4 is missing is an cognitive architecture to make use of its 'intelligence'. 
-- Contextualisation is a big problem. An Agent-self´s model, its current objective context, its world context, its project context, its broader context of interaction. The agent has to understand everything from small to big at every step when its needed.
-- The agents has to have the abilities to actually interact and implements its work. Iterate on it, now that it created past versions of work.
+- GPT-4 is superior to humans. Let GPT-4 operate in the right context and with the given executive abilities, and it will be more capable than you, executing your tasks with higher precision. What GPT-4 is missing is a cognitive architecture to make use of its 'intelligence'.
+- Contextualization is a big problem. An Agent's model, its current objective context, its world context, its project context, its broader context of interaction. The agent has to understand everything from small to big at every step when it's needed.
+- The agent has to have the abilities to actually interact and implement its work. Iterate on it, not give single output results. We should be benchmarking AI (Agents) based on their general multi-step capabilities to operate and not on single-shot results.
 
 The core challenges associated with building the Autonomous AI Developer:
-- Working with various, vastly different codebases at scale. Being able to comprehend any codebase, any size, any tech stack and find the right, relevant contents to edit at a time. Being able to work in everything from js, ts, python, rust, c++ to cobol and assembly. An agnostic system that can contextualise any codebase. Understand it like a developer, navigate it like a developer.
-- Having an actual environment and abilities to write the code, run the code & deployment, navigate the code, navigate logs basically the IDE & Deployment // Dev environment & make sense of them contextually.
-- Generating valid code. Actual challenge to generate valid working code is iteration. That said the challenge is creating test methods that can validate if the works correctly, rather than just generating the code. What are the right testing methods to ensure we generate valid code?
-- Assembling context in a way that the AI understands what it is, where it is, what it should do next, how it should do it, what it already did. What, Where, Who, Why. -> Creating the bigger picture to create a comprehensive understanding at every step in the process. // -> The Agent´s Self that can comprehend and execute, that can think autonomously to solve an objective. 
-
+- Working with various, vastly different codebases at scale. Being able to comprehend any codebase, any size, any tech stack, and find the right, relevant contents to edit at a time. Being able to work in everything from JavaScript, TypeScript, Python, Rust, C++, COBOL, and assembly. An agnostic system that can contextualize any codebase. Understand it like a developer, navigate it like a developer.
+- Having an actual environment and abilities to write the code, run the code & deployment, navigate the code, navigate logs basically as the IDE & Deployment // Dev environment & make sense of them contextually.
+- Generating valid code. The actual challenge to generate valid working code is iteration. That said, the challenge is creating test methods that can validate if the code works correctly, rather than just generating the code. What are the right testing methods to ensure we generate valid code?
+- Assembling context in a way that the AI understands what it is, where it is, what it should do next, how it should do it, what it already did. What, Where, Who, Why. -> Creating the bigger picture to create a comprehensive understanding at every step in the process. // -> The Agent's Self that can comprehend and execute, that can think autonomously to solve an objective.
 
 When humans conduct problem solving it can be dissected into a generalised approach:
 1. Goal Identification: Identifying the objective or desired outcome.
@@ -36,7 +34,7 @@ When humans conduct problem solving it can be dissected into a generalised appro
 4. Execution: Implementing the plan.
 5. Monitoring & Adjustment: Evaluating progress, making necessary adjustments.
 6. Reflection and Learning: Reviewing outcomes and gaining insights for future improvements.
-Although its sequentially represented here, humans are capabale of jumping between the layers.
+Although its sequentially represented here, humans are capabale of jumping between the layers, storing information of this process and the broader context of the world and project.
 
 This framework aims to replicate the human approach to problem-solving through an artificial cognitive architecture designed to create AI employees that closely resemble human employees. Unlike other proposed architectures, this is intended to be a real-world implementation rather than a conceptual, theoretical framework.
 
@@ -59,7 +57,7 @@ A sample flow:
 
 
 ## World / Environment
-- The OACE operates within a Linux Docker container, essentially providing the AI with its own computer system. This setup allows the AI to utilize Linux as its personal navigation device to interact with the world, enabling a wide range of capabilities including file management, service configuration, server management, web browsing, package installation, and more. The Docker container also has the potential to interface with physical devices, allowing for diverse applications (for example connecting to camera feeds). For detailed information on the OACE's capabilities for the Autonomous AI Developer, refer to the Abilities section, which outlines its specific functionalities and limitations.
+- The OACE operates within a Linux Docker container, essentially providing the AI with its own computer system. This setup allows the AI to utilize Linux as its personal navigation device to interact with the world, enabling a wide range of capabilities including file management, service configuration, server management, web browsing, package installation, and more. The Docker container also has the potential to interface with physical devices, allowing for diverse applications (for example connecting to camera feeds, using physical robotics controllers, etc...). For detailed information on the OACE's capabilities for the Autonomous AI Developer, refer to the Abilities section, which outlines its specific functionalities and limitations.
 
 **Env Interaction Schema – sgconfig.json**
 - The sgconfig.json file serves as a comprehensive configuration guide, detailing the operational blueprint for navigating and managing a project's directory structure and its nested folders. This file acts as a virtual onboarding manual for developers, outlining essential information such as the organization of the codebase, associated documentation, file storage conventions, general coding practices, local deployment procedures, and version control protocols with git. It functions as the definitive interaction schema for local development operations.
@@ -134,14 +132,13 @@ These abilities are designed to facilitate the interaction of the OACE with the 
 
 **Tools**: 
 - CRUD Files
-- Search File Snippets (semantic) in Folder and receive File & Lines (from-to)
 - CRUD Terminal-Session
 - CRUD Terminal-Commands in Session
 - CRUD Browser Tab (Web browser interaction & automation)
 - Read Web Browser Tab Log, Network, etc...
 - Ask the user (If user input is needed it can be requested via tool, waits until it gets an answer)
 - Websocket Testing
-- Code Snippet Retrieval
+- Code Snippet Retrieval // Search File Snippets (semantic) in Folder and receive File & Lines (from-to)
 
 **Procedures**
 - Combination of tools to create a predefined procedure to interact with the world env & state. By chaining together tools we create a procedure that directly has a specialised use case (to not have to do the same combos over and over)
@@ -251,7 +248,7 @@ e## Layer Communication
 
 ## Comprehension Layer
 **Description:** 
-The Comprehension Layer is the foundational stage where high-level strategies are formulated to achieve the set objective(s). It involves an in-depth analysis of the current environment, meaning existing files & code-snippets and their current state, then devising strategic plans to alter this state to meet the objectives. This layer acts as the brain's strategic center, conducting deep investigation and research to establish overarching goals and strategic directions.
+The Comprehension Layer is the foundational stage where high-level strategies are formulated to achieve the set objective(s). It involves an in-depth analysis of the current environment, meaning existing files & code-snippets and their current state, then devising strategic plans to alter this state to meet the objectives. This layer acts as the brain's strategic center, conducting deep investigation and research to establish a strategic direction under contextual consideration.
 
 **Input:** 
 - Objective/Goal Definition: A articulation of the desired outcome or goal 
