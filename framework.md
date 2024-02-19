@@ -8,11 +8,11 @@
 - [Memory](#memory)
 - [Layer Processing General](#layer-processing-general)
 - [Layer Communication](#layer-communication)
+- [Definition Layer](#definition-layer)
 - [Comprehension Layer](#comprehension-layer)
 - [Executive Function Layer](#executive-function-layer)
 - [Cognitive Control](#cognitive-control)
 - [Task Prosecution(s) Layer](#task-prosecutions-layer)
-- [Credits \& additional resources](#credits--additional-resources)
 
 
 ## General Introduction 
