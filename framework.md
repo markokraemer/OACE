@@ -16,16 +16,6 @@
 
 
 ## General Introduction 
-General Problem with building really capable AI Agents right now:
-- GPT-4 is superior to humans. Let GPT-4 operate in the right context and with the given executive abilities, and it will be more capable than you, executing your tasks with higher precision. What GPT-4 is missing is a cognitive architecture to make use of its 'intelligence'.
-- Contextualization is a big problem. An Agent's model, its current objective context, its world context, its project context, its broader context of interaction. The agent has to understand everything from small to big at every step when it's needed.
-- The agent has to have the abilities to actually interact and implement its work. Iterate on it, not give single output results. We should be benchmarking AI (Agents) based on their general multi-step capabilities to operate and not on single-shot results.
-
-The core challenges associated with building the Autonomous AI Developer:
-- Working with various, vastly different codebases at scale. Being able to comprehend any codebase, any size, any tech stack, and find the right, relevant contents to edit at a time. Being able to work in everything from JavaScript, TypeScript, Python, Rust, C++, COBOL, and assembly. An agnostic system that can contextualize any codebase. Understand it like a developer, navigate it like a developer.
-- Having an actual environment and abilities to write the code, run the code & deployment, navigate the code, navigate logs basically as the IDE & Deployment // Dev environment & make sense of them contextually.
-- Generating valid code. The actual challenge to generate valid working code is iteration. That said, the challenge is creating test methods that can validate if the code works correctly, rather than just generating the code. What are the right testing methods to ensure we generate valid code?
-- Assembling context in a way that the AI understands what it is, where it is, what it should do next, how it should do it, what it already did. What, Where, Who, Why. -> Creating the bigger picture to create a comprehensive understanding at every step in the process. // -> The Agent's Self that can comprehend and execute, that can think autonomously to solve an objective.
 
 When humans conduct problem solving it can be dissected into a generalised approach:
 1. Goal Identification: Identifying the objective or desired outcome.
@@ -33,27 +23,21 @@ When humans conduct problem solving it can be dissected into a generalised appro
 3. Planning & Strategising: Creating a detailed plan of action.
 4. Execution: Implementing the plan.
 5. Monitoring & Adjustment: Evaluating progress, making necessary adjustments.
-6. Reflection and Learning: Reviewing outcomes and gaining insights for future improvements.
+6. Reflection and Learning: Reviewing outcomes and gaining insights for future improvements..
 Although its sequentially represented here, humans are capabale of jumping between the layers, storing information of this process and the broader context of the world and project.
 
 This framework aims to replicate the human approach to problem-solving through an artificial cognitive architecture designed to create AI employees that closely resemble human employees. Unlike other proposed architectures, this is intended to be a real-world implementation rather than a conceptual, theoretical framework.
 
-The goal of this framework is to serve as the underlying structure for SoftGen.ai's Autonomous AI Developer and to lay the groundwork for creating other autonomous AIs. By creating a cognitive architecture that mimics a human software developer, we are paving the way for a general framework for autonomous cognitive entities capable of interacting with the world and solving objectives based on their environment and abilities.
+The goal of this framework is to serve as the underlying structure for the Autonomous AI Developer and to lay the groundwork for creating other autonomous AIs. By creating a cognitive architecture that mimics a human software developer, we are paving the way for a general framework for autonomous cognitive entities capable of interacting with the world and solving objectives based on their environment and abilities.
 
-The framework encompasses the environment in which the OACE operates, its practical abilities within the environment, its Long-Term & Short-Term (Working) Memory, and the core processing layers: 'Comprehension', 'Executive Function', 'Cognitive Control', and 'Task Prosecution'. These layers resemble a procedural system for problem-solving with guarded autonomy within each layer.
+The framework encompasses the environment in which the OACE operates, its practical abilities within the environment, its Long-Term & Short-Term (Working) Memory, and has procedural processing layers: 'Definition', 'Comprehension', 'Executive Function', 'Cognitive Control', and 'Task Prosecution'. These layers resemble a procedural system for problem-solving with guarded autonomy within each layer.
 
 A sample flow:
-
-0. The objective is discussed and defined outside of the OACE by the user. 
-1. Comprehension Layer receives the objective from the user.
-2. Comprehension Layer gains a deeper understanding of the objective, identifies relevant files/snippets, and devises strategies to achieve the objective. This involves thorough investigation and strategizing on how to approach the matter, making sense of the world using the Environmental Context.
-3. Executive Function creates detailed implementation task plans to reach the objective. This involves creating detailed tasks.
-4. Cognitive Control selects which task to work on from the plan.
-5. Task Prosecution works on the task.
-6. Cognitive Control evaluates task success/failure and decides what to do next. It may send the task back to prosecution or back to the Executive Function to replan.
-7. Repeat until all tasks are completed.
-8. Comprehension Layer receives information upwards after the Task List is completed, conducts further research, and may recommend additional testing, etc. This process is recursive until Comprehension Layer declares "Objective-reached".
-
+1. Definition Layer: Clearly define and understand the problem, gather information, determine high-level strategy, and a clear definition of done.
+2. Comprehension Layer: Gather relevant information and data, analyze the problem by breaking it down into smaller components, understand the underlying causes, and autonomously develop a deeper understanding by identifying relevant files/code snippets, devising high-level goals.
+3. Executive Function Layer: Generate potential solutions, evaluate and select the most promising solution(s), plan the technical implementation, generate detailed tasks, and output a task list for the OACE to work on.
+4. Cognitive Control Layer: Choose tasks to focus on, decide what action to take next, monitor and evaluate task prosecution outcomes, and signal for plan readjustment if necessary.
+5. Task Prosecution Layer: Execute tasks, validate, and return task prosecution results.
 
 
 ## World / Environment
@@ -126,7 +110,6 @@ Sample Structure:
 
 
 
-
 ## Abilities
 These abilities are designed to facilitate the interaction of the OACE with the world environment. They are fixed procedures and flows that can be utilized in a flexible environment. They give all the magic tools to the OACE.
 
@@ -145,8 +128,8 @@ These abilities are designed to facilitate the interaction of the OACE with the 
 - Examples: Visit page and check for errors (server+browser) and return, run cURL request and return result, run Websocket Testing + send messages + check result, google/stack-overflow/etc… search + visit first 3 pages + report back, Read+Analyse+Evaluate Tab Log.
 
 
-OACE Abilities Logic Preview:
-![OACE Abilities Logic Preview](https://uploads-ssl.webflow.com/649081f0ae28305bdf0ff3b2/65c21c4b1ef3ac79eecd299a_preview-min.jpg)
+OACE Abilities Logic Examples:
+![OACE Abilities Logic Examples](https://uploads-ssl.webflow.com/649081f0ae28305bdf0ff3b2/65c21c4b1ef3ac79eecd299a_preview-min.jpg)
 
 
 
@@ -184,7 +167,6 @@ WM is primarily composed of the latest output layer info:
 - Strategies 
 - Current Task List (Latest task list that encapsulates the exact actions) and status
 - Event Log of Layer-thread-summaries (all periodic events that happend since start of process)
-
 
 
 Sample Structure:
@@ -234,21 +216,45 @@ Sample Structure:
 
 
 ## Layer Processing General:
-- Each Layer functions as an independent OACE with its own set of abilities.
-- CoT / ToT / Observe+Think+Act in each Layer.
-- Each layer operates recursively or or up to a specified number of steps to generate a final output. It uses its abilities and internal dialogue to facilitate thinking. It operates within specified boundaries set by system-level instructions on the procedural general process to execute in each layer.
+- The layers act as guardrails to ensure that we follow a systematic problem-solving approach. These layers are modular and subject to change.
+- Each layer functions as an independent and autonomous agent with its own set of abilities. It operates recursively or up to a specified number of steps to generate a final output that aligns with the layer's purpose. The layer uses its abilities and internal dialogue to facilitate thinking. It operates within the boundaries set by layer-level instructions and utilizes CoT / ToT / Observe+Think+Act prompting techniques to enhance reasoning abilities within the layer.
 
-e## Layer Communication
+
+## Layer Communication
 - Bidirectional communication between each layer
-- Utilizes a Top-to-bottom bus and Bottom-to-top communication bus.
-- Upon creation of an output, the output and the layer-thread summary are shared in both directions. A latest Working Memory is also generated with the latest information.
+- Utilizes a Top-to-bottom bus and Bottom-to-top communication.
+- Upon creation of an output, the output and the layer-thread summary are shared in both directions. Working Memory is also generated with the latest information.
 - For top-to-bottom communication, this serves as an instruction for the next layer to be processed.
 - For bottom-to-top communication, this provides information upon which the upper-layer can, but must not, Act upon and send down instructions again.
+- The user has the ability to interrupt the process at any time by issuing the command "Please scratch all of this and go back to planning" in any layer. The current layer will then navigate to the appropriate layer.
+
+
+## Definition Layer
+**Description:** 
+The Definition Layer serves as the initial phase in the problem-solving process, where the problem is clearly defined, and relevant information is gathered to understand the context fully. This layer sets the stage for all subsequent layers by establishing a clear objective, determining a high-level strategy, and defining a clear criterion for completion. It ensures that the problem-solving process is aligned with the desired outcome from the very beginning.
+
+**Input:** 
+- Initial Problem Statement: A clear articulation of the problem to be solved.
+- Available Data and Information: Any existing information, data, or context that can help understand the problem better.
+
+**Output:** 
+- A well-defined problem statement that includes specific objectives and goals.
+- A high-level strategy outlining the approach to be taken to solve the problem.
+- A clear definition of done, specifying what completion looks like.
+
+**Workflow/Processing:** 
+1. **Problem Identification:** Clarifying the problem statement to ensure it is well understood.
+2. **Information Gathering:** Collecting all relevant data, information, and context to fully understand the problem and its environment.
+3. **Objective Setting:** Defining specific, measurable, achievable, relevant, and time-bound (SMART) objectives to solve the problem.
+4. **High-Level Strategy Formulation:** Developing a high-level approach or strategy that outlines how the objectives can be achieved.
+5. **Definition of Done:** Establishing clear criteria that define what completion looks like, ensuring that the problem-solving process is goal-oriented and focused.
+
+This layer ensures that all subsequent actions and decisions are made with a clear understanding of the problem, the desired outcome, and the high-level approach to be taken. It lays the foundation for a systematic and structured problem-solving process.
 
 
 ## Comprehension Layer
 **Description:** 
-The Comprehension Layer is the foundational stage where high-level strategies are formulated to achieve the set objective(s). It involves an in-depth analysis of the current environment, meaning existing files & code-snippets and their current state, then devising strategic plans to alter this state to meet the objectives. This layer acts as the brain's strategic center, conducting deep investigation and research to establish a strategic direction under contextual consideration.
+The Comprehension Layer is the foundational stage where an in-depth analysis of the current environment, meaning existing files & code-snippets and their current state, then devising strategic plans to alter this state to meet the objectives. This layer acts as a comprehension step to understand the Definition of Done and find all the relevant suitable relevant context, conducting deep investigation and research to establish a strategic direction under contextual consideration. 
 
 **Input:** 
 - Objective/Goal Definition: A articulation of the desired outcome or goal 
@@ -266,7 +272,7 @@ The Comprehension Layer is the foundational stage where high-level strategies ar
 
 ## Executive Function Layer
 **Description:** 
-The Executive Function Layer serves as the bridge between the high-level strategies devised in the Comprehension Layer and their execution. It is tasked with developing detailed, actionable plans by thoroughly defining each task, including potential contingencies and future considerations. This ensures a holistic approach towards achieving the set objectives. A key focus of this layer is on context retrieval, which guarantees that the plans are both appropriate and sufficiently detailed to align with the strategic direction, given the current context and environmental conditions.
+The Executive Function Layer serves as the bridge between the Definition of Done, high-level strategies devised in the Comprehension Layer and their execution. It is tasked with developing detailed, actionable plans by thoroughly defining each task, including potential contingencies and future considerations. This ensures a holistic approach towards achieving the set objectives. A key focus of this layer is on context retrieval, which guarantees that the plans are both appropriate and sufficiently detailed to align with the strategic direction, given the current context and environmental conditions.
 
 **Input:** 
 - Initial User Input
@@ -328,10 +334,3 @@ Sample Processing Flow:
 
 
 
-
-
-
-## Credits & additional resources
-- This architecture is inspired by David Shapiro´s [ACE Framework](https://arxiv.org/pdf/2310.06775.pdf) 
-- Draws also inspiration from CoALA ([CoALA](https://arxiv.org/pdf/2309.02427.pdf)) and the SOAR cognitive architecture 
-- [Good introduction to understand cognitive architecture](https://www.youtube.com/watch?v=bfO4EkoGh40)
